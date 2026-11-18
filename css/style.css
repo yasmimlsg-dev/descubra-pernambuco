@@ -1,0 +1,478 @@
+/* =================================
+   CONFIGURAÇÕES GERAIS
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #173B3A;
+    background-color: #FFFDF7;
+}
+
+:root {
+    --verde: #087F70;
+    --verde-escuro: #064E48;
+    --laranja: #FF8A45;
+    --amarelo: #FFD166;
+    --fundo: #FFFDF7;
+    --texto: #173B3A;
+    --cinza: #6D7C79;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section-padding {
+    padding: 90px 0;
+}
+
+/* CABEÇALHO */
+.header {
+    width: 100%;
+    background-color: var(--fundo);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--verde-escuro);
+}
+
+.logo span {
+    color: var(--laranja);
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--laranja);
+}
+
+.btn-nav {
+    background-color: var(--verde);
+    color: white;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-nav:hover {
+    background-color: var(--verde-escuro);
+    transform: translateY(-3px);
+}
+
+/* BANNER PRINCIPAL */
+.hero {
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(0, 35, 36, 0.78), rgba(0, 35, 36, 0.15)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=90")
+        center 55% / cover no-repeat;
+    color: white;
+}
+
+.hero-content {
+    padding: 100px 0;
+}
+
+.tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    max-width: 700px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--amarelo);
+}
+
+.hero p {
+    max-width: 520px;
+    color: #F2F5F2;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--laranja);
+    color: white;
+    padding: 16px 27px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #E66E2C;
+    transform: translateY(-4px);
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 25px;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* INTRODUÇÃO */
+.intro {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.section-tag {
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    margin: 18px 0;
+    color: var(--verde-escuro);
+}
+
+.intro h2 span {
+    color: var(--laranja);
+}
+
+.intro p {
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.9;
+    color: var(--cinza);
+}
+
+/* TÍTULOS DAS SEÇÕES */
+.beaches {
+    background-color: #F1F8F4;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 42px);
+    color: var(--verde-escuro);
+    margin-top: 12px;
+}
+
+.section-heading p {
+    max-width: 360px;
+    line-height: 1.7;
+    color: var(--cinza);
+}
+
+/* CARDS DE PRAIAS */
+.beach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.beach-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.beach-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+.beach-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 22px;
+}
+
+.location {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--verde);
+}
+
+.card-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin: 12px 0;
+    color: var(--verde-escuro);
+}
+
+.card-content p {
+    font-size: 13px;
+    color: var(--cinza);
+    line-height: 1.7;
+    min-height: 66px;
+}
+
+.card-content a {
+    display: inline-block;
+    color: var(--laranja);
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.card-content a:hover {
+    color: var(--verde);
+}
+
+/* PONTOS TURÍSTICOS */
+.destination-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 230px 230px;
+    gap: 20px;
+}
+
+.destination-card {
+    display: flex;
+    align-items: end;
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    isolation: isolate;
+    transition: transform 0.3s;
+}
+
+.destination-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.destination-card:hover {
+    transform: scale(1.02);
+}
+
+.destination-card span {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--amarelo);
+}
+
+.destination-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin: 8px 0;
+}
+
+.destination-card p {
+    font-size: 13px;
+}
+
+.recife {
+    grid-row: span 2;
+    background-image: url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=85");
+}
+
+.olinda {
+    background-image: url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85");
+}
+
+.brennand {
+    background-image: url("https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=85");
+}
+
+/* CHAMADA FINAL */
+.call-to-action {
+    background-color: var(--verde-escuro);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.call-to-action span {
+    color: var(--amarelo);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.call-to-action h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 48px);
+    max-width: 700px;
+    margin: 20px auto 30px;
+}
+
+/* RODAPÉ */
+.footer {
+    background-color: #043B37;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer .logo {
+    color: white;
+}
+
+.footer p {
+    margin: 15px 0 30px;
+    color: #C5D8D3;
+    font-size: 14px;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #A9C0BA;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 950px) {
+    .beach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .btn-nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero-content {
+        padding: 80px 0;
+    }
+
+    .hero-bottom {
+        font-size: 10px;
+    }
+
+    .intro {
+        padding: 70px 0;
+    }
+
+    .section-padding {
+        padding: 65px 0;
+    }
+
+    .beach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .beach-card img {
+        height: 230px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 220px);
+    }
+
+    .recife {
+        grid-row: auto;
+    }
+}
